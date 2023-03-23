@@ -21,6 +21,8 @@ import requests
 import sys
 
 print('workdir:' + os.getcwd())
+os.chdir('/ql/data/scripts/vpei_tvrul/')
+print('workdir:' + os.getcwd())
 
 from cls import IsValid
 from cls import LocalFile

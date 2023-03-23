@@ -7,3 +7,59 @@ https://raw.githubusercontent.com/vpei/Free-TVUrl-Merge/main/out/nsfw.txt
 [2023-03-23 10:33:56] Main-Line-272-main-Exception:name 'osite_upurl' is not defined
 osite_tvurl:
 https://raw.githubusercontent.com/vpei/Free-TVUrl-Merge/main/out/tvbox.txt
+
+[2023-03-23 10:34:22] Main-Line-272-main-Exception:HTTPConnectionPool(host='47.242.90.42', port=8888): Max retries exceeded with url: /down/BJZPa8THuiE9 (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0000020A46043D00>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+osite_tvurl:
+http://47.242.90.42:8888/down/BJZPa8THuiE9
+
+[2023-03-23 10:34:29] Main-Line-272-main-Exception:name 'osite_upurl' is not defined
+osite_tvurl:
+http://miaotvs.cn/meow
+
+[2023-03-23 10:34:31] Main-Line-272-main-Exception:name 'osite_upurl' is not defined
+osite_tvurl:
+https://神器每日推送.tk/pz.json
+
+[2023-03-23 10:34:32] Main-Line-272-main-Exception:name 'osite_upurl' is not defined
+osite_tvurl:
+https://xn--m7r412advb92j21st65a.tk/pz.json
+
+[2023-03-23 10:34:38] Main-Line-272-main-Exception:name 'osite_upurl' is not defined
+osite_tvurl:
+https://raw.githubusercontent.com/shadowchiu369/TVBox/1defc079c7c99680d1a4333d2de5c3396ffd9af2/sc.json
+
+[2023-03-23 10:35:11] Main-Line-272-main-Exception:name 'osite_upurl' is not defined
+osite_tvurl:
+https://agit.ai/zwx/see/raw/branch/dev/v/ys.json
+
+[2023-03-23 10:35:18] Main-Line-272-main-Exception:name 'osite_upurl' is not defined
+osite_tvurl:
+http://miaotvs.cn/osc
+
+[2023-03-23 10:37:19] Main-Line-272-main-Exception:HTTPSConnectionPool(host='drpy.owen10086.repl.co', port=443): Max retries exceeded with url: /config/2 (Caused by ReadTimeoutError("HTTPSConnectionPool(host='drpy.owen10086.repl.co', port=443): Read timed out. (read timeout=120)"))
+osite_tvurl:
+https://drpy.owen10086.repl.co/config/2
+
+[2023-03-23 10:37:31] Main-Line-272-main-Exception:name 'osite_upurl' is not defined
+osite_tvurl:
+http://js.134584.xyz/json/pp87.json
+
+[2023-03-23 10:37:35] Main-Line-272-main-Exception:HTTPSConnectionPool(host='box.okeybox.top', port=443): Max retries exceeded with url: /tv/0xth.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000020A47259E20>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+osite_tvurl:
+https://box.okeybox.top/tv/0xth.json
+
+[2023-03-23 10:37:38] Main-Line-272-main-Exception:name 'osite_upurl' is not defined
+osite_tvurl:
+https://raw.githubusercontent.com/zhanghong1983/TVBOXZY/main/TVBOX/gfgr.json
+
+[2023-03-23 10:37:43] Main-Line-272-main-Exception:'utf-8' codec can't decode byte 0xff in position 0: invalid start byte
+osite_tvurl:
+https://agit.ai/hu/hcr/raw/branch/master/MMM.txt
+
+[2023-03-23 10:38:04] Main-Line-272-main-Exception:HTTPSConnectionPool(host='freed.yuanhsing.cf', port=443): Max retries exceeded with url: /TVBox/meow.json (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000020A47259F70>: Failed to establish a new connection: [WinError 10060] 由于连接方在一段时间后没有正确答复或连接的主机没有反应，连接尝试失败。'))
+osite_tvurl:
+https://freed.yuanhsing.cf/TVBox/meow.json
+
+[2023-03-23 10:38:05] Main-Line-272-main-Exception:name 'osite_upurl' is not defined
+osite_tvurl:
+https://e40.cn/yyds
