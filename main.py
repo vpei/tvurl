@@ -1,4 +1,15 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+File: main.py(TvNode)
+Author: TvNode
+Date: 2023/3/23 08:00
+TG: https://t.me/jktvbox
+cron: 30 5 5 * * *
+new Env('TvNode更新合并去无效');
+ActivityEntry: APP搜索"jktvbox"
+"""
 
 import base64
 import datetime
