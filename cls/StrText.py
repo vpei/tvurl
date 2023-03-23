@@ -34,14 +34,14 @@ class StrText():
                 return '%.1f%s/s' % (value, s)
         return "%sB/s" % number
 
-	def hum_convert(value):
-	    value=float(value)
-	    units = ["B", "KB", "MB", "GB", "TB", "PB"]
-	    size = 1024.0
-	    for i in range(len(units)):
-	        if (value / size) < 1:
-	            return "%.2f%s" % (value, units[i])
-	        value = value / size
+    def hum_convert(value):
+        value=float(value)
+        units = ["B", "KB", "MB", "GB", "TB", "PB"]
+        size = 1024.0
+        for i in range(len(units)):
+            if (value / size) < 1:
+                return "%.2f%s" % (value, units[i])
+            value = value / size
 
     #检验是否全是中文字符
     def is_all_chinese(strs):
