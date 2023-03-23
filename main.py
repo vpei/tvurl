@@ -599,6 +599,9 @@ if(menu == 'update'):
 
         r_pushagent = LocalFile.read_LocalFile("./res/r_pushagent.txt")
 
+        LocalFile.write_LocalFile('/ql/static/dist/tvbox', r_spider + '\r\n\r\n' + r_lives + '\r\n\r\n"sites":[' + addtv + '\r\n' + r_pushagent + '\r\n],'
+            + r_parses + r_flags + r_ijk + r_ads)
+
         LocalFile.write_LocalFile('./out/tvbox.txt', r_spider + '\r\n\r\n' + r_lives + '\r\n\r\n"sites":[' + addtv + '\r\n' + r_pushagent + '\r\n],'
             + r_parses + r_flags + r_ijk + r_ads)
         LocalFile.write_LocalFile('./out/nsfw.txt', r_spider + '\r\n\r\n' + r_lives + '\r\n\r\n"sites":[' + nsfw + '\r\n' + r_pushagent + '\r\n],'
