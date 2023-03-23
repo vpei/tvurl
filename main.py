@@ -23,6 +23,8 @@ try:
         cid = sys.argv[1:][1]
 except:
     menu = 'init'
+
+menu = 'update'
 print('menu: ' + menu)
 
 # ustat = NetFile.url_stat('https://video.xuan.io/api.php/provide/vod/', 60, 60)
@@ -267,7 +269,7 @@ if(menu == 'update'):
 
 
 # 下载Node.json中的所有Url订阅链接将其合并，生成本地vpei-new.txt，同步至Github后改名为vpei.txt文件
-if(menu == 'upexpire'):
+# if(menu == 'upexpire'):
     r_sites_err = LocalFile.read_LocalFile("./res/r_sites_err.txt")
     nettvexpire = LocalFile.read_LocalFile("./res/expire.txt")
     nettvexpire = nettvexpire.strip('\n')
@@ -296,7 +298,7 @@ if(menu == 'upexpire'):
         LocalFile.write_LocalFile('./res/r_sites_err.txt', expires.strip('\n')) 
     print('Get-expire.txt: \n' + str(len(expires)))
 
-if(menu == 'uptvbox'):
+# if(menu == 'uptvbox'):
     tvlist = LocalFile.read_LocalFile("./res/tvlist.json")
     print('Get-tvbox.json: \n' + str(len(tvlist.split('\n'))))
     #sub_link = []
@@ -500,7 +502,7 @@ if(menu == 'uptvbox'):
     print('Line-563:/res/r_parses_err.txt已更新。')
 
 # 下载Node.json中的所有Url订阅链接将其合并，生成本地vpei-new.txt，同步至Github后改名为vpei.txt文件
-if(menu == 'check'):
+# if(menu == 'check'):
     try:
         rename = LocalFile.read_LocalFile('./res/rename.txt').replace('\r','').replace('\n\n','\n')
         if(os.path.exists('./out/all')):
