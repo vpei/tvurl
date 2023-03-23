@@ -166,7 +166,7 @@ if(menu == 'update'):
                 # rq = s.get(newboxurl, keep_alive=False, verify=False, timeout=(240, 120)) #连接超时 和 读取超时
                 # rq.encoding = 'utf-8'
                 if (rq.status_code != 200 and rq.status_code != 301 and rq.status_code != 302):
-                    print('[GET Code {}] Download sub error on link: '.format(rq.status_code) + osite_upurl)
+                    print('[GET Code {}] Download sub error on link: '.format(rq.status_code) + newboxurl)
                     boxurl = boxurl + '\n' + i
                     continue
                 # boxsites = (rq.content).decode('utf-8', 'ignore') # 可用
@@ -244,7 +244,7 @@ if(menu == 'update'):
                             except Exception as ex:
                                 LocalFile.write_LogFile('Main-Line-205-Exception:' + str(ex) + '\nonesite:\n' + onetv)
             except Exception as ex:
-                LocalFile.write_LogFile('Main-Line-272-main-Exception:' + str(ex) + '\nosite_tvurl:\n' + osite_tvurl)
+                LocalFile.write_LogFile('Main-Line-247-main-Exception:' + str(ex) + '\nosite_tvurl:\n' + osite_tvurl)
             boxurl = boxurl + '\n' + i
     # 去除重复项目
     # write_json()
