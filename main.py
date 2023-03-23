@@ -19,6 +19,9 @@ import json
 import os
 import requests
 import sys
+
+print('workdir:' + os.getcwd())
+
 from cls import IsValid
 from cls import LocalFile
 from cls import ListFile
