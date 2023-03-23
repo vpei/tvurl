@@ -129,7 +129,7 @@ if(menu == 'update'):
         LocalFile.write_LocalFile('/ql/data/scripts/vpei_tvurl/res/r_sites_err.txt', expires.strip('\n')) 
     print('Get-expire.txt: \n' + str(len(expires)))
 
-    tvlist = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/tvlist.json")
+    tvlist = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/tvlist.json')
     list1 = tvlist.split('\n')
     list1 = ListFile.get_list_sort(list1)
     print('Get-tvbox.json: \n' + str(len(list1)))
@@ -315,7 +315,7 @@ if(menu == 'update'):
     print('Get-expire.txt: \n' + str(len(expires)))
 
     # if(menu == 'uptvbox'):
-    tvlist = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/tvlist.json")
+    tvlist = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/tvlist.json')
     print('Get-tvbox.json: \n' + str(len(tvlist.split('\n'))))
     #sub_link = []
     #for i in range(len(sub_url)):
