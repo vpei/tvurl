@@ -115,8 +115,8 @@ menu = 'update'
 # 下载Node.json中的所有Url订阅链接将其合并，生成本地vpei-new.txt，同步至Github后改名为vpei.txt文件
 # 本菜单暂时无效
 if(menu == 'update'):
-    oldexpire = LocalFile.read_LocalFile("./res/r_sites_err.txt")
-    nettvexpire = LocalFile.read_LocalFile("./res/expire.txt")
+    oldexpire = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/r_sites_err.txt')
+    nettvexpire = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/expire.txt')
     # 本地所有失效链接合并去重存储至expires.txt
     allexpire = oldexpire.strip('\n') + '\n' + nettvexpire.strip('\n')
     expires = ''
@@ -129,7 +129,7 @@ if(menu == 'update'):
         LocalFile.write_LocalFile('/ql/data/scripts/vpei_tvurl/res/r_sites_err.txt', expires.strip('\n')) 
     print('Get-expire.txt: \n' + str(len(expires)))
 
-    tvlist = LocalFile.read_LocalFile("./res/tvlist.json")
+    tvlist = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/tvlist.json")
     list1 = tvlist.split('\n')
     list1 = ListFile.get_list_sort(list1)
     print('Get-tvbox.json: \n' + str(len(list1)))
@@ -255,7 +255,7 @@ if(menu == 'update'):
     #print('Url-All-Clash-To-Mixed-Nodes:\n' + allonesite)
 
     # 读取所有节点到allonesite新记录后面。
-    alltypename = LocalFile.read_LocalFile("./res/typename.txt").replace('\r','')
+    alltypename = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/typename.txt').replace('\r','')
     tvlists = []
     with open('/ql/data/scripts/vpei_tvurl/res/tvlist.json', 'r', encoding='utf-8') as f:
         tvlists = json.load(f)
@@ -286,11 +286,11 @@ if(menu == 'update'):
 
     # 下载Node.json中的所有Url订阅链接将其合并，生成本地vpei-new.txt，同步至Github后改名为vpei.txt文件
     # if(menu == 'upexpire'):
-    r_sites_err = LocalFile.read_LocalFile("./res/r_sites_err.txt")
-    nettvexpire = LocalFile.read_LocalFile("./res/expire.txt")
+    r_sites_err = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/r_sites_err.txt')
+    nettvexpire = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/expire.txt')
     nettvexpire = nettvexpire.strip('\n')
     # 处理临时数据和网络失效数据中vmess同一IP和端口过滤列表
-    fakeip = LocalFile.read_LocalFile("./res/fakeip.txt")
+    fakeip = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/fakeip.txt')
     newallexpire = ''
     for i in nettvexpire.split('\n'):
         try:
@@ -315,7 +315,7 @@ if(menu == 'update'):
     print('Get-expire.txt: \n' + str(len(expires)))
 
     # if(menu == 'uptvbox'):
-    tvlist = LocalFile.read_LocalFile("./res/tvlist.json")
+    tvlist = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/tvlist.json")
     print('Get-tvbox.json: \n' + str(len(tvlist.split('\n'))))
     #sub_link = []
     #for i in range(len(sub_url)):
@@ -328,10 +328,10 @@ if(menu == 'update'):
     ii = 0
     iii = 0
     # 获取默认值再添加后重写
-    alllive = LocalFile.read_LocalFile("./res/live.txt")
-    r_parses = LocalFile.read_LocalFile("./res/r_parses.txt")
-    r_parses_err = LocalFile.read_LocalFile("./res/r_parses_err.txt")
-    tvlist = LocalFile.read_LocalFile("./res/all")
+    alllive = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/live.txt')
+    r_parses = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/r_parses.txt')
+    r_parses_err = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/r_parses_err.txt')
+    tvlist = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/all')
     if(tvlist.find('"sites":[')>-1):
         tvlist = StrText.get_str_btw(tvlist, '"sites":[', '],', 0) + ','
     tvjar = ''
@@ -525,14 +525,14 @@ if(menu == 'update'):
             tvbox = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/out/all').replace('\r','').replace('\n\n','\n')
         else:
             tvbox = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/all').replace('\r','').replace('\n\n','\n')
-        r_sites_err = LocalFile.read_LocalFile("./res/r_sites_err.txt")
+        r_sites_err = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/r_sites_err.txt')
         addtv = ''
         nsfw = ''
         spare = ''
         tvbox = tvbox.replace('//{','\n{')
         for j in tvbox.split('\n'):
             try:
-                if(j != '' and j.find('"jar":"./') == -1 and j.find('"ext":"./') == -1 and j.find('"key":') > -1 and j.find('"name":') > -1 and j.find('"type":') > -1 and r_sites_err.find(j) == -1):
+                if(j != '' and j.find('"jar":'/ql/data/scripts/vpei_tvurl/') == -1 and j.find('"ext":'/ql/data/scripts/vpei_tvurl/') == -1 and j.find('"key":') > -1 and j.find('"name":') > -1 and j.find('"type":') > -1 and r_sites_err.find(j) == -1):
                     j = j.strip(',').replace('"type":0','"type":1')
                     if(len(j.split('}')) > len(j.split('{'))):
                         j = j.strip(',')[:-1].strip(',')
@@ -600,20 +600,20 @@ if(menu == 'update'):
         LocalFile.write_LocalFile('/ql/data/scripts/vpei_tvurl/res/r_sites_err.txt', r_sites_err.strip('\r\n'))
         print('Line-563:/res/r_sites_err.txt已更新。')
 
-        r_spider = LocalFile.read_LocalFile("./res/r_spider.txt")
+        r_spider = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/r_spider.txt')
         r_spider = '{\r\n//Update:' + str(datetime.datetime.now()) + '\r\n\r\n' + r_spider
-        r_lives = LocalFile.read_LocalFile("./res/r_lives.txt")
-        r_parses = LocalFile.read_LocalFile("./res/r_parses.txt")
+        r_lives = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/r_lives.txt')
+        r_parses = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/r_parses.txt')
         r_parses = '\r\n\r\n"parses":[\r\n' + r_parses.replace('},\n{','},\r\n{').strip(',') + '\r\n],'
-        r_flags = LocalFile.read_LocalFile("./res/r_flags.txt")
+        r_flags = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/r_flags.txt')
         r_flags = '\r\n\r\n' + r_flags
-        r_ijk = LocalFile.read_LocalFile("./res/r_ijk.txt").replace('},{','},\r\n{').replace('[{','[\r\n{')
+        r_ijk = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/r_ijk.txt').replace('},{','},\r\n{').replace('[{','[\r\n{')
         r_ijk = '\r\n\r\n' + r_ijk
         r_ijk = r_ijk.replace('\r','').replace('\n','\r\n')
-        r_ads = LocalFile.read_LocalFile("./res/r_ads.txt")
+        r_ads = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/r_ads.txt')
         r_ads = '\r\n\r\n' + r_ads + '\r\n}'
 
-        r_pushagent = LocalFile.read_LocalFile("./res/r_pushagent.txt")
+        r_pushagent = LocalFile.read_LocalFile('/ql/data/scripts/vpei_tvurl/res/r_pushagent.txt')
 
         LocalFile.write_LocalFile('/ql/static/dist/tvbox', r_spider + '\r\n\r\n' + r_lives + '\r\n\r\n"sites":[' + addtv + '\r\n' + r_pushagent + '\r\n],'
             + r_parses + r_flags + r_ijk + r_ads)
