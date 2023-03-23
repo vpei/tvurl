@@ -532,7 +532,7 @@ if(menu == 'update'):
         tvbox = tvbox.replace('//{','\n{')
         for j in tvbox.split('\n'):
             try:
-                if(j != '' and j.find('"jar":'/ql/data/scripts/vpei_tvurl/') == -1 and j.find('"ext":'/ql/data/scripts/vpei_tvurl/') == -1 and j.find('"key":') > -1 and j.find('"name":') > -1 and j.find('"type":') > -1 and r_sites_err.find(j) == -1):
+                if(j != '' and j.find('"jar":"./') == -1 and j.find('"ext":"./') == -1 and j.find('"key":') > -1 and j.find('"name":') > -1 and j.find('"type":') > -1 and r_sites_err.find(j) == -1):
                     j = j.strip(',').replace('"type":0','"type":1')
                     if(len(j.split('}')) > len(j.split('{'))):
                         j = j.strip(',')[:-1].strip(',')
