@@ -36,7 +36,8 @@ class NetFile(): # 将订阅链接中YAML，Base64等内容转换为 Url 链接�
             s.keep_alive = False # 关闭多余连接
             s.verify = False
             rq = s.get(r_url, timeout=(linktime, readtime))
-            #rq = requests.get(url, timeout=(30, 60)) #连接超时 和 读取超时
+            # rq = requests.get(url, timeout=(30, 60)) #连接超时 和 读取超时
+
             if (rq.status_code != 200):
                 print("\nNetFile-Line-18: Download File error.][" + str(rq.status_code) + "]-Url: " + r_url)
             else:
@@ -54,7 +55,7 @@ class NetFile(): # 将订阅链接中YAML，Base64等内容转换为 Url 链接�
                     # retxt = retxt.replace('\ufeff', '')
                 else:
                     retxt = rq.text.encode(rq.encoding)
-                retxt = retxt.decode('utf-8')
+                retxt = retxt.decode('utf-8').replace('\ufeff', '').strip('\n')
             rq.close()
         except Exception as ex:
             print('\nNetFile-Line-34: down res file err: ' + str(ex) + '\n' +  r_url)

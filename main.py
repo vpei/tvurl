@@ -167,7 +167,6 @@ if(menu == 'update'):
                 # # rq.encoding = 'utf-8'
                 # if (rq.status_code != 200 and rq.status_code != 301 and rq.status_code != 302):
                 #     print('[GET Code {}] Download sub error on link: '.format(rq.status_code) + newboxurl)
-                #     boxurl = boxurl + '\n' + i
                 #     continue
                 # # boxsites = (rq.content).decode('utf-8', 'ignore') # 可用
                 # # print(str(isinstance(rq.text, basestring)))
@@ -178,7 +177,7 @@ if(menu == 'update'):
                 #     boxsites = rq.text.encode('utf-8') #unicode -> str
                 #     boxsites = boxsites.decode('utf-8') #str -> unicode
                 # boxsites = boxsites.encode('utf-8').decode('utf-8', 'ignore').replace('\ufeff', '').strip('\n')
-                boxsites = NetFile.url_to_str(newboxurl, 240, 240)
+                boxsites = NetFile.url_to_str(newboxurl, 240, 120)
                 if (boxsites != '' and osite_upmd5 != hashlib.md5(boxsites.encode('utf-8')).hexdigest()):
                     osite['upmd5'] = hashlib.md5(boxsites.encode('utf-8')).hexdigest()
                     if (osite_tvurl.find('k51qzi5uqu5dgc33fk7pd3093uw5ouejcyhwicv6gtfersoetui51qxq62zn5a') > -1):
