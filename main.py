@@ -177,8 +177,7 @@ if(menu == 'update'):
                 # else:
                 #     boxsites = rq.text.encode('utf-8') #unicode -> str
                 #     boxsites = boxsites.decode('utf-8') #str -> unicode
-                boxsites = boxsites.encode('utf-8').decode('utf-8', 'ignore').replace('\ufeff', '').strip('\n')
-
+                # boxsites = boxsites.encode('utf-8').decode('utf-8', 'ignore').replace('\ufeff', '').strip('\n')
                 boxsites = NetFile.url_to_str(newboxurl, 240, 240)
                 if (boxsites != '' and osite_upmd5 != hashlib.md5(boxsites.encode('utf-8')).hexdigest()):
                     osite['upmd5'] = hashlib.md5(boxsites.encode('utf-8')).hexdigest()
