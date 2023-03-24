@@ -56,4 +56,3 @@ class StrText():
             if '\u4e00' <= _char <= '\u9fa5':
                 return True
         return False
-		

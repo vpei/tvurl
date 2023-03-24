@@ -158,26 +158,28 @@ if(menu == 'update'):
                 newboxurl = newboxurl.replace('<mm>', datetime.datetime.now().strftime('%m'))
                 newboxurl = newboxurl.replace('<dd>', datetime.datetime.now().strftime('%d'))
                 print('Get node link on sub ' + newboxurl)
-                requests.adapters.DEFAULT_RETRIES = 3 # 增加重连次数
-                s = requests.session()
-                s.keep_alive = False # 关闭多余连接
-                s.verify = False
-                rq = s.get(newboxurl, timeout=(240, 120)) #连接超时 和 读取超时
-                # rq = s.get(newboxurl, keep_alive=False, verify=False, timeout=(240, 120)) #连接超时 和 读取超时
-                # rq.encoding = 'utf-8'
-                if (rq.status_code != 200 and rq.status_code != 301 and rq.status_code != 302):
-                    print('[GET Code {}] Download sub error on link: '.format(rq.status_code) + newboxurl)
-                    boxurl = boxurl + '\n' + i
-                    continue
-                # boxsites = (rq.content).decode('utf-8', 'ignore') # 可用
-                # print(str(isinstance(rq.text, basestring)))
-                # print(str(chardet.detect(rq.text)))
-                if(rq.encoding != None):
-                    boxsites = rq.text.encode(rq.encoding).decode('utf-8')
-                else:
-                    boxsites = rq.text.encode('utf-8') #unicode -> str
-                    boxsites = boxsites.decode('utf-8') #str -> unicode
+                # requests.adapters.DEFAULT_RETRIES = 3 # 增加重连次数
+                # s = requests.session()
+                # s.keep_alive = False # 关闭多余连接
+                # s.verify = False
+                # rq = s.get(newboxurl, timeout=(240, 120)) #连接超时 和 读取超时
+                # # rq = s.get(newboxurl, keep_alive=False, verify=False, timeout=(240, 120)) #连接超时 和 读取超时
+                # # rq.encoding = 'utf-8'
+                # if (rq.status_code != 200 and rq.status_code != 301 and rq.status_code != 302):
+                #     print('[GET Code {}] Download sub error on link: '.format(rq.status_code) + newboxurl)
+                #     boxurl = boxurl + '\n' + i
+                #     continue
+                # # boxsites = (rq.content).decode('utf-8', 'ignore') # 可用
+                # # print(str(isinstance(rq.text, basestring)))
+                # # print(str(chardet.detect(rq.text)))
+                # if(rq.encoding != None):
+                #     boxsites = rq.text.encode(rq.encoding).decode('utf-8')
+                # else:
+                #     boxsites = rq.text.encode('utf-8') #unicode -> str
+                #     boxsites = boxsites.decode('utf-8') #str -> unicode
                 boxsites = boxsites.encode('utf-8').decode('utf-8', 'ignore').replace('\ufeff', '').strip('\n')
+
+                boxsites = NetFile.url_to_str(newboxurl, 240, 240)
                 if (boxsites != '' and osite_upmd5 != hashlib.md5(boxsites.encode('utf-8')).hexdigest()):
                     osite['upmd5'] = hashlib.md5(boxsites.encode('utf-8')).hexdigest()
                     if (osite_tvurl.find('k51qzi5uqu5dgc33fk7pd3093uw5ouejcyhwicv6gtfersoetui51qxq62zn5a') > -1):

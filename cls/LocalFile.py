@@ -48,4 +48,4 @@ class LocalFile(): # 将订阅链接中YAML，Base64等内容转换为 Url 链�
             if(fcont.find('Exception') > -1):
                 print('LocalFile-Line-49-Write-OK-Type(a-add,w-write): ' + wtype + '-Size:' + str(fsize) + '-Path:' + fname)
         except Exception as ex:
-            print('LocalFile-Line-46-write-Exception:\n' + str(ex) + '\nPath:' + fname + '-Fcont:' + fcont)
+            print('LocalFile-Line-51-write-Exception:\n' + str(ex) + '\nPath:' + fname + '-Fcont:' + fcont)

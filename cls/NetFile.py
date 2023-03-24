@@ -4,6 +4,7 @@ import requests
 import urllib.request as urllib2
 import urllib3
 from cls.LocalFile import LocalFile
+from urllib3 import PoolManager
 
 class NetFile(): # 将订阅链接中YAML，Base64等内容转换为 Url 链接内容
     # 从网络文件是否存在
@@ -16,6 +17,10 @@ class NetFile(): # 将订阅链接中YAML，Base64等内容转换为 Url 链接�
             s.keep_alive = False # 关闭多余连接
             rq = s.get(r_url, timeout=(linktime, readtime), verify=False)  # 发送https请求时，加入verify=False，忽略证书验证
             retxt = rq.status_code
+            
+            # http = PoolManager()
+            # http.request('GET', 'https://www.google.com/', headers={'Accept-Encoding': 'br'})
+
             rq.close()
         except Exception as ex:
             print('\nNetFile-Line-34: down res file err: ' + str(ex) + '\n' +  r_url)
@@ -25,6 +30,7 @@ class NetFile(): # 将订阅链接中YAML，Base64等内容转换为 Url 链接�
     def url_to_str(r_url, linktime, readtime):
         retxt = ''
         try:
+            urllib3.disable_warnings()  # 将这段代码放到调用https的代码段中，避免其他模块调用时仍报该错
             requests.adapters.DEFAULT_RETRIES = 3 # 增加重连次数
             s = requests.session()
             s.keep_alive = False # 关闭多余连接
@@ -58,6 +64,7 @@ class NetFile(): # 将订阅链接中YAML，Base64等内容转换为 Url 链接�
     def down_res_file(r_url, fname, linktime, readtime):
         retxt = ''
         try:
+            urllib3.disable_warnings()  # 将这段代码放到调用https的代码段中，避免其他模块调用时仍报该错
             r_url = r_url + '' + fname
             rq = requests.get(r_url, timeout=(linktime, readtime))
             #rq = requests.get(url, timeout=(30, 60)) #连接超时 和  读取超时
