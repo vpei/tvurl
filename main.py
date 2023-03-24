@@ -252,7 +252,7 @@ if(menu == 'update'):
     # write_json()
     # 将节点更新时间等写入配置文件
     if (boxurl.find('uptime') > -1):
-        LocalFile.write_LocalFile('./res/list.json', boxurl.strip('\n'))
+        LocalFile.write_LocalFile('./res/tvlist.json', boxurl.strip('\n'))
     print('Line-238:tvbox.json已更新，共更新网址[' + str(iii) + ']。')
     #print('Url-All-Clash-To-Mixed-Nodes:\n' + allonesite)
 
