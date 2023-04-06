@@ -49,7 +49,7 @@ menu = 'update'
 # menu = 'uptvbox'
 # menu = 'check'
 # 配置信息和同步本地需要更新的资源文件
-# resurl = 'http://121.46.250.130:8080/ipns/k2k4r8n888sny0v16vyfxbjwqrk0vgvh9k84xixh5k6ejdywbdc509ax/'
+# resurl = 'http://121.46.250.130:8080/ipns/k51qzi5uqu5dgiinzrr0r5xnq55uhoy6ytf0m1d27z655ha2mvljqyjybrj2xz/'
 
 # 对程序的基本信息进行下载更新，下载IPFS网关信息和过滤列表信息
 # if(menu == 'init'):
@@ -182,11 +182,11 @@ if(menu == 'update'):
                     osite['upmd5'] = hashlib.md5(boxsites.encode('utf-8')).hexdigest()
                     if (osite_tvurl.find('k51qzi5uqu5dgc33fk7pd3093uw5ouejcyhwicv6gtfersoetui51qxq62zn5a') > -1):
                         osite['uptime'] = (datetime.datetime.now() - datetime.timedelta(days=1453)).strftime("%Y-%m-%d %H:%M:%S")
-                    elif (osite_tvurl.find('k2k4r8n888sny0v16vyfxbjwqrk0vgvh9k84xixh5k6ejdywbdc509ax/index') > -1):
+                    elif (osite_tvurl.find('k51qzi5uqu5dgiinzrr0r5xnq55uhoy6ytf0m1d27z655ha2mvljqyjybrj2xz/index') > -1):
                         osite['uptime'] = (datetime.datetime.now() - datetime.timedelta(days=1097)).strftime("%Y-%m-%d %H:%M:%S")
                     elif (osite_tvurl.find('out/node') > -1):
                         osite['uptime'] = (datetime.datetime.now() - datetime.timedelta(days=731)).strftime("%Y-%m-%d %H:%M:%S")
-                    elif (osite_tvurl.find('vpei') > -1 or osite_tvurl.find('k2k4r8n888sny0v16vyfxbjwqrk0vgvh9k84xixh5k6ejdywbdc509ax') > -1):
+                    elif (osite_tvurl.find('vpei') > -1 or osite_tvurl.find('k51qzi5uqu5dgiinzrr0r5xnq55uhoy6ytf0m1d27z655ha2mvljqyjybrj2xz') > -1):
                         osite['uptime'] = (datetime.datetime.now() - datetime.timedelta(days=365)).strftime("%Y-%m-%d %H:%M:%S")
                     #elif (ii > 115):
                     #    osite['uptime'] = (datetime.datetime.now() + datetime.timedelta(days=365)).strftime("%Y-%m-%d %H:%M:%S")
@@ -358,17 +358,17 @@ if(menu == 'update'):
                 boxsites = NetFile.url_to_str(newboxurl, 240, 120)
                 boxsites = boxsites.replace(' ','')
                 boxsites = boxsites.encode('utf-8').decode('utf-8', 'ignore').replace('\ufeff', '').strip('\n')
-                if (boxsites != '' and (osite_upmd5 != hashlib.md5(boxsites.encode('utf-8')).hexdigest() or osite_tvurl.find('/vpei/')>-1 or osite_tvurl.find('k2k4r8n888sny0v16vyfxbjwqrk0vgvh9k84xixh5k6ejdywbdc509ax')>-1)):
+                if (boxsites != '' and (osite_upmd5 != hashlib.md5(boxsites.encode('utf-8')).hexdigest() or osite_tvurl.find('/vpei/')>-1 or osite_tvurl.find('k51qzi5uqu5dgiinzrr0r5xnq55uhoy6ytf0m1d27z655ha2mvljqyjybrj2xz')>-1)):
                     # 写入文件
                     LocalFile.write_LocalFile('./tmp/' + hashlib.md5(newboxurl.encode('utf-8')).hexdigest() + '.txt', boxsites)
                     osite['upmd5'] = hashlib.md5(boxsites.encode('utf-8')).hexdigest()
-                    if (osite_tvurl.find('k2k4r8n888sny0v16vyfxbjwqrk0vgvh9k84xixh5k6ejdywbdc509ax') > -1):
+                    if (osite_tvurl.find('k51qzi5uqu5dgiinzrr0r5xnq55uhoy6ytf0m1d27z655ha2mvljqyjybrj2xz') > -1):
                         osite['uptime'] = (datetime.datetime.now() - datetime.timedelta(days=1453)).strftime("%Y-%m-%d %H:%M:%S")
-                    elif (osite_tvurl.find('k2k4r8n888sny0v16vyfxbjwqrk0vgvh9k84xixh5k6ejdywbdc509ax/index2') > -1):
+                    elif (osite_tvurl.find('k51qzi5uqu5dgiinzrr0r5xnq55uhoy6ytf0m1d27z655ha2mvljqyjybrj2xz/index2') > -1):
                         osite['uptime'] = (datetime.datetime.now() - datetime.timedelta(days=1097)).strftime("%Y-%m-%d %H:%M:%S")
                     elif (osite_tvurl.find('out/node') > -1):
                         osite['uptime'] = (datetime.datetime.now() - datetime.timedelta(days=731)).strftime("%Y-%m-%d %H:%M:%S")
-                    elif (osite_tvurl.find('vpei') > -1 or osite_tvurl.find('k2k4r8n888sny0v16vyfxbjwqrk0vgvh9k84xixh5k6ejdywbdc509ax') > -1):
+                    elif (osite_tvurl.find('vpei') > -1 or osite_tvurl.find('k51qzi5uqu5dgiinzrr0r5xnq55uhoy6ytf0m1d27z655ha2mvljqyjybrj2xz') > -1):
                         osite['uptime'] = (datetime.datetime.now() - datetime.timedelta(days=365)).strftime("%Y-%m-%d %H:%M:%S")
                     #elif (ii > 115):
                     #    osite['uptime'] = (datetime.datetime.now() + datetime.timedelta(days=365)).strftime("%Y-%m-%d %H:%M:%S")
